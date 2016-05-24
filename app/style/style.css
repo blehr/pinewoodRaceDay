@@ -1,0 +1,62 @@
+.denList {
+  margin-top: 10px;
+}
+
+.resetButton {
+  margin-top: 25px;
+}
+
+.pageContentHeight {
+  min-height: 800px;
+}
+
+.activeDen {
+  background-color: rgba(0, 63, 135, .8) !important;
+  color: #FCD116 !important ;
+}
+
+.readOnly {
+  font-weight: bold !important;
+}
+
+.readOnly:focus {
+  outline: none;
+  box-shadow:none !important;
+  border:1px solid #ccc !important;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+.heatInput {
+  width: 85px !important;
+  text-align: right;
+  margin-left: 2px;
+}
+
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+}
+.flexItem {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.headerFont {
+  font-family: 'Racing Sans One', sans-serif;
+}
+
+footer {
+  width: 100%;
+  min-height: 75px;
+  padding-top: 25px;
+  border-top: 1px solid #DDD;
+}
