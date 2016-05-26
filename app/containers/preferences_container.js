@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { resetAllState, togglePoints } from '../actions/index';
-import ErrorMessage from '../components/error_message';
-import { showErrorMessage } from '../util/helper';
 import  { resetButton } from '../style/style.css';
 
 class PreferencesContainer extends Component {
@@ -22,19 +20,8 @@ class PreferencesContainer extends Component {
     this.props.resetAllState();
   }
 
-  errorId = 'pointsToggleError';
-
   onPointsChange() {
-    if (this.props.scouts.length !== 0 ) {
-      const hasHeats = this.props.scouts.every(scout => scout.heat1);
-      if (hasHeats) {
-        showErrorMessage(this.errorId);
-      } else {
-        this.props.togglePoints(this.props.points);
-      }
-    } else {
-      this.props.togglePoints(this.props.points);
-    }
+    this.props.togglePoints(this.props.points);
   }
 
   render() {
@@ -42,7 +29,8 @@ class PreferencesContainer extends Component {
       <div className="col-sm-6 col-sm-offset-3">
         <div >
           <h3 className="text-center">Use Point System</h3>
-          <p className="lead">If you would like to use a point system instead of recording times, check the box below.</p>
+          <p className="lead">If you would like to use a point system instead of elapsed-time, check the box below.</p>
+          <span className="lead text-danger">This will delete all current scores.</span>
           <div className="checkbox text-center" >
             <label>
               <input type="checkbox"
@@ -51,7 +39,6 @@ class PreferencesContainer extends Component {
               />
             <strong>points</strong>
           </label>
-          <ErrorMessage id={this.errorId} message="Can not change scoring system while any scouts have scores recorded" />
           </div>
         </div>
         <hr/>

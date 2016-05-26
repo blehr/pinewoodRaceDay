@@ -17,7 +17,8 @@ const ListItem = props => {
 };
 
 ListItem.propTypes = {
-  item: PropTypes.node
+  item: PropTypes.node,
+  activeDen: PropTypes.string
 };
 
 export default ListItem;

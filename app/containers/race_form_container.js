@@ -56,12 +56,9 @@ class RaceFormContainer extends Component {
     });
 
     return (
-      <div>
+      <div className="table-responsive">
         <h3 className={`text-center text-capitalize ${style.headerFont}`}>{this.props.activeDen}</h3>
-        <table className={`table table-hover table-responsive ${style.raceFormTable}`}>
-          <thead>
-            <tr></tr>
-          </thead>
+        <table className="table table-hover">
           <tbody>
             {Scout}
           </tbody>

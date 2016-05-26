@@ -8,7 +8,7 @@ const DenSelect = props => {
     if (props.list.length === 0) {
       return;
     } else {
-      return <DenSelectItem item={item} key={item} onTextClick={props.onTextClick} onDeleteClick={props.onDeleteClick} activeDen={props.activeDen} />
+      return <DenSelectItem item={item} key={item} onTextClick={props.onTextClick} onDeleteClick={props.onDeleteClick} activeDen={props.activeDen} />;
     }
   });
 

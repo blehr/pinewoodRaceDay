@@ -26,6 +26,14 @@ const ScoutReducer = (state = [], action) => {
         scout.checked = !scout.checked;
       }
     });
+  case 'TOGGLE_POINTS':
+    return state.map(scout => {
+      return {
+        name: scout.name,
+        den: scout.den,
+        checked: scout.checked
+      };
+    });
   case 'RESET_ALL_STATE':
     const emptyState = [];
     return emptyState;

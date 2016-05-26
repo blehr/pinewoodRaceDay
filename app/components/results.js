@@ -35,19 +35,19 @@ const Results = props => {
 
 
   return (
-    <div>
+    <div className="table-responsive">
       <h3 className={`text-center text-capitalize ${headerFont}`}>{props.den}</h3>
-      <table className="table table-hover table-responsive">
+      <table className="table table-hover">
         <thead>
           <tr>
-            <td className={props.onCheckedChange ? '' : 'hide'}><h4>Display</h4></td>
-            <td><h4>Name</h4></td>
-            <td className="text-center"><h4>Heat 1</h4></td>
-            <td className="text-center"><h4>Heat 2</h4></td>
-            <td className="text-center"><h4>Heat 3</h4></td>
-            <td className="text-center"><h4>Heat 4</h4></td>
-            <td className="text-center"><h4>Average</h4></td>
-            <td className="text-center"><h4>Fastest</h4></td>
+            <th className={props.onCheckedChange ? '' : 'hide'}>Display</th>
+            <th>Name</th>
+            <th className="text-center">Heat 1</th>
+            <th className="text-center">Heat 2</th>
+            <th className="text-center">Heat 3</th>
+            <th className="text-center">Heat 4</th>
+            <th className="text-center">Average</th>
+            <th className="text-center">Fastest</th>
           </tr>
         </thead>
         <tbody>

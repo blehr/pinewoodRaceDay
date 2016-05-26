@@ -14,7 +14,8 @@ const DenSelectItem = props => {
 };
 
 DenSelectItem.propTypes = {
-  item: PropTypes.string
+  item: PropTypes.string,
+  activeDen: PropTypes.string
 };
 
 export default DenSelectItem;

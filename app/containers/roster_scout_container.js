@@ -52,7 +52,7 @@ class RosterScoutContainer extends Component {
   render() {
     return(
       <div>
-        <Input handleInputChange={this.onInputChange} onFormSubmit={this.onScoutSubmit} name={this.state.scoutName} denHeading={`${this.props.activeDen} Den `} formHeading={'(Add Scout Names)'} />
+        <Input handleInputChange={this.onInputChange} onFormSubmit={this.onScoutSubmit} name={this.state.scoutName} denHeading={this.props.activeDen || 'Select a Group'} formHeading={'Add Names to '} />
         <ErrorMessage id={this.errorId} message="Select a den to add scouts to." />
         <List list={this.props.scouts} onTextClick={this.onDenClick} activeDen={this.props.activeDen} onDeleteClick={this.onDeleteClick} />
       </div>
