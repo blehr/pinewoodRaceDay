@@ -15,6 +15,6 @@ export default (
     <Route path="/roster" component={Roster} />
     <Route path="/race" component={Race} />
     <Route path="/results" component={OverallResults} />
-  <Route path="/preferences" component={Preferences} />
+    <Route path="/preferences" component={Preferences} />
   </Route>
 );

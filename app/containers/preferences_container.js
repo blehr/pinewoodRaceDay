@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { resetAllState, togglePoints } from '../actions/index';
-import  { resetButton } from '../style/style.css';
 
 class PreferencesContainer extends Component {
   static propTypes = {
@@ -44,7 +43,7 @@ class PreferencesContainer extends Component {
         <hr/>
         <h3 className="text-center text-danger">Caution:</h3>
         <p className="lead">This will erase all data! This includes den names, scout names, and times! <u>This proccess is irreversible</u>! This is appropriate for starting a new tournament.</p>
-      <button type="button" className={`btn btn-lg btn-danger center-block ${resetButton}`} onClick={this.onClick.bind(this)} title="Are you sure?">Reset All Data</button>
+      <button type="button" className="btn btn-lg btn-danger center-block resetButton" onClick={this.onClick.bind(this)} title="Are you sure?">Reset All Data</button>
       </div>
     );
   }

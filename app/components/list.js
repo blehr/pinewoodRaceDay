@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ListItem from './list_item';
-import style from '../style/style.css';
 
 
 const List = props => {
@@ -18,8 +18,10 @@ const List = props => {
   });
 
   return (
-    <div className={`list-group ${style.denList}`}>
-      {Item}
+    <div className="list-group denList">
+      <ReactCSSTransitionGroup transitionName="fade" transitionEnterTimeout={500} transitionLeave={false} transitionLeaveTimeout={300} >
+        {Item}
+      </ReactCSSTransitionGroup >
     </div>
   );
 };

@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -33,6 +34,7 @@ module.exports = {
       source: false,
       modules: false
     }),
+    new CopyWebpackPlugin([{ from: 'app/favicon', to: 'favicon' }]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
@@ -50,7 +52,7 @@ module.exports = {
       loader: 'json'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
+      loader: ExtractTextPlugin.extract('style', 'css!postcss')
     }, {
       test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'
      }]

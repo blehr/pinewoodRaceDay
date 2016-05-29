@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
-import style from '../style/style.css';
 
 const DenSelectItem = props => {
   return  (
-    <li className={style.flexItem}>
+    <li className="flexItem">
       <input type="text"
-        className={props.activeDen === props.item ? `form-control ${style.activeDen} ${style.readOnly} text-capitalize` : `form-control ${style.readOnly} text-capitalize`}
+        className={props.activeDen === props.item ? 'form-control readOnly activeDen text-capitalize' : 'form-control readOnly text-capitalize'}
         value={props.item} onClick={(e) => {e.preventDefault(); props.onTextClick(props.item);}}
         readOnly
        />

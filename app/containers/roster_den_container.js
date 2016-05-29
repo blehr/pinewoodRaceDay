@@ -47,6 +47,10 @@ class RosterDenContainer extends Component {
   }
 
   onDeleteClick(den) {
+    /*
+    *  if any scouts are assigned to den show error message
+    * if den is active den, treset active den
+    */
     const scoutArray = this.props.scouts;
     if (!scoutArray.some(scout => scout.den === den)) {
       this.props.removeDenName(den);

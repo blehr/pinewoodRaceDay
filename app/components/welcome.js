@@ -1,13 +1,11 @@
 import React from 'react';
-import { pageContentHeight } from '../style/style.css';
 import img from '../assets/pinewoodraceday.png';
-import style from '../style/style.css';
 
 
 const Welcome = () => {
   return (
     <div>
-      <div className={`row ${pageContentHeight}`}>
+      <div className="row pageContentHeight">
         <div className="col-sm-6">
           <h3 className="text-center">Welcome</h3>
           <p>Our pack is blessed to have a nice aluminum four lane track with precision timers. Unfortunately, the software was problematic and had disappeared years ago. We persevered using spreadsheets at best, pen and paper at worst, until now.</p>
@@ -26,7 +24,7 @@ const Welcome = () => {
 
           <p>If a suitable track is not available, or this is a raingutter regatta race, then the points system should be used. To enable this, click the preferences tab above and check the points box. This will allow simple numbers to be entered for each heat with scoring as follows:</p>
 
-          <table className={`table table-bordered ${style.scoreExample}`}>
+        <table className="table table-bordered scoreExample">
             <thead>
               <tr>
                 <th>Place</th>
@@ -144,7 +142,7 @@ const Welcome = () => {
 
           <p>I hope you enjoyed using PinewoodRaceDay. If you have any suggestions or praises, I would love to hear it. You can reach me on twitter <a href="https://twitter.com/brandonlehr" target="_blank">@brandonlehr</a> and by email <a href="mailto:blehr.mail@gmail.com" target="_blank">blehr.mail@gmail.com</a></p>
 
-          <h2 className={`text-center ${style.headerFont}`} style={{'marginTop': '60px'}}>PinewoodRaceDay</h2>
+        <h2 className="text-center headerFont" style={{'marginTop': '60px'}}>PinewoodRaceDay</h2>
         </div>
       </div>
     </div>

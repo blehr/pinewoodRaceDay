@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import RaceForm from '../components/race_form';
 import { updateScout } from '../actions/index';
-import style from '../style/style.css';
 import _ from 'lodash';
 
 
@@ -57,12 +57,12 @@ class RaceFormContainer extends Component {
 
     return (
       <div className="table-responsive">
-        <h3 className={`text-center text-capitalize ${style.headerFont}`}>{this.props.activeDen}</h3>
-        <table className="table table-hover">
-          <tbody>
-            {Scout}
-          </tbody>
-        </table>
+        <h3 className="text-center text-capitalize headerFont">{this.props.activeDen}</h3>
+          <table className="table table-hover">
+            <ReactCSSTransitionGroup component="tbody" transitionName="fade" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
+              {Scout}
+            </ReactCSSTransitionGroup >
+          </table>
       </div>
     );
   }

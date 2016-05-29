@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Checkbox from '../components/checkbox';
-import { headerFont } from '../style/style.css';
 
 const Results = props => {
   const sortedList = [];
@@ -36,7 +35,7 @@ const Results = props => {
 
   return (
     <div className="table-responsive">
-      <h3 className={`text-center text-capitalize ${headerFont}`}>{props.den}</h3>
+      <h3 className="text-center text-capitalize headerFont">{props.den}</h3>
       <table className="table table-hover">
         <thead>
           <tr>

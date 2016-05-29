@@ -10,6 +10,16 @@ import localForage from 'localforage';
 
 import reducers from './reducers';
 
+import ga from 'react-ga';
+ga.initialize('UA-78496724-1');
+
+function logPageView() {
+  ga.pageview(window.location.pathname);
+}
+
+// ?modules&localIdentName=[name]---[local]---[hash:base64:5]
+// ?modules&localIdentName=[name]---[local]---[hash:base64:5]
+
 const applyMiddlewares = applyMiddleware(
   promise
 );
@@ -24,6 +34,6 @@ persistStore(store, {storage: localForage});
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <Router history={browserHistory} routes={routes} onUpdate={logPageView} />
   </Provider>
   , document.querySelector('.root'));

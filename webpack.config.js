@@ -3,6 +3,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -26,7 +27,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    })
+    }),
+    new CopyWebpackPlugin([{ from: 'app/favicon', to: 'favicon' }])
   ],
   module: {
     loaders: [{
@@ -41,7 +43,7 @@ module.exports = {
       loader: 'json'
     }, {
       test: /\.css$/,
-      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
+      loader: 'style!css'
     }, {
       test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'
      }]

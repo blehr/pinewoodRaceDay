@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import HeatInput from './heat_input.js';
-import style from '../style/style.css';
 
 
 export default class HeatInputs extends Component {
@@ -24,7 +23,7 @@ export default class HeatInputs extends Component {
 
   render() {
     return (
-      <form className={`form-inline ${style.flexContainer}`} onSubmit={this.props.handleSubmit.bind(this, this.props.scout)}>
+      <form className="form-inline flexContainer" onSubmit={this.props.handleSubmit.bind(this, this.props.scout)}>
         <HeatInput heatNum="1" handleChange={this.handleChange} scout={this.props.scout}/>
         <HeatInput heatNum="2" handleChange={this.handleChange} scout={this.props.scout}/>
         <HeatInput heatNum="3" handleChange={this.handleChange} scout={this.props.scout}/>

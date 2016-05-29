@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import style from '../style/style.css';
 import DenSelectItem from './den_select_item';
 
 
@@ -13,7 +12,7 @@ const DenSelect = props => {
   });
 
   return (
-    <ul className={`list-inline ${style.denList} ${style.flexContainer}`}>
+    <ul className="list-inline denList flexContainer">
       {Item}
     </ul>
   );
