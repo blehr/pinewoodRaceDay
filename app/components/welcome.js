@@ -8,11 +8,12 @@ const Welcome = () => {
       <div className="row pageContentHeight">
         <div className="col-sm-6">
           <h3 className="text-center">Welcome</h3>
-          <p>Our pack is blessed to have a nice aluminum four lane track with precision timers. Unfortunately, the software was problematic and had disappeared years ago. We persevered using spreadsheets at best, pen and paper at worst, until now.</p>
 
-          <p>Welcome to PinewoodRaceDay.com, a web accessible, no download, no installation, <b>no cost</b>, solution for pinewood derbies and raingutter regattas.</p>
+          <p>Welcome to PinewoodRaceDay.com, no download, no installation, <b>no cost</b>, solution for pinewood derby races and raingutter regattas. Perfect for use in Boy Scouts, Cub Scouts, BSA, Awana, and Youth groups.</p>
 
-          <p>This application works with both <b>elapsed-time</b> and <b>point</b> methods of scoring.</p>
+          <p className="text-danger">This application works with both <b>elapsed-time</b> and <b>point</b> methods of scoring.</p>
+
+          <p>Our Cub Scout pack is blessed to have a nice aluminum four lane track with precision timers. Unfortunately, the software was problematic and had disappeared years ago. We persevered using spreadsheets at best, pen and paper at worst, until now.</p>
 
           <h3 className="text-center">The Roster</h3>
 
@@ -24,7 +25,7 @@ const Welcome = () => {
 
           <p>If a suitable track is not available, or this is a raingutter regatta race, then the points system should be used. To enable this, click the preferences tab above and check the points box. This will allow simple numbers to be entered for each heat with scoring as follows:</p>
 
-        <table className="table table-bordered scoreExample">
+          <table className="table table-bordered scoreExample">
             <thead>
               <tr>
                 <th>Place</th>
