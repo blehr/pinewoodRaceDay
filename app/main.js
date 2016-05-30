@@ -17,9 +17,6 @@ function logPageView() {
   ga.pageview(window.location.pathname);
 }
 
-// ?modules&localIdentName=[name]---[local]---[hash:base64:5]
-// ?modules&localIdentName=[name]---[local]---[hash:base64:5]
-
 const applyMiddlewares = applyMiddleware(
   promise
 );
