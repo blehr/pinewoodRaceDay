@@ -13,7 +13,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js',
+    filename: '[name].min.js',
     publicPath: '/'
   },
   plugins: [
@@ -23,7 +23,7 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin('[name].min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -34,7 +34,10 @@ module.exports = {
       source: false,
       modules: false
     }),
-    new CopyWebpackPlugin([{ from: 'app/favicon', to: 'favicon' }]),
+    new CopyWebpackPlugin([
+      { from: 'app/favicon', to: 'favicon' },
+      { from: 'app/manifest.appcache'}
+    ]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
