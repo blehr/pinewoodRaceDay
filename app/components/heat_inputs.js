@@ -23,12 +23,12 @@ export default class HeatInputs extends Component {
 
   render() {
     return (
-      <form className="form-inline flexContainer" onSubmit={this.props.handleSubmit.bind(this, this.props.scout)}>
+      <form className="flexContainer" onSubmit={this.props.handleSubmit.bind(this, this.props.scout)}>
         <HeatInput heatNum="1" handleChange={this.handleChange} scout={this.props.scout}/>
         <HeatInput heatNum="2" handleChange={this.handleChange} scout={this.props.scout}/>
         <HeatInput heatNum="3" handleChange={this.handleChange} scout={this.props.scout}/>
         <HeatInput heatNum="4" handleChange={this.handleChange} scout={this.props.scout}/>
-        <button type="submit" className="btn btn-default">Submit</button>
+        <button type="submit" className="btn btn-default heatInputSubmit">Submit</button>
       </form>
     );
   }

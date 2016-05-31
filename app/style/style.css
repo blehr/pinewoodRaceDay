@@ -43,7 +43,11 @@ td {
 .heatInput {
   width: 85px !important;
   text-align: right;
-  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.heatInputSubmit {
+  margin-top: 10px;
 }
 
 
