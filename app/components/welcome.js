@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../assets/pinewoodraceday.png';
+import pinewoodImg from '../assets/pinewood.jpg';
 
 
 const Welcome = () => {
@@ -132,18 +133,20 @@ const Welcome = () => {
 
           <p>The elapsed-time method should eliminate any ties. In the rare case that this does occur, the averages can be compared. Ties are very common using the points method. In this case, simply move down the list the desired number of places or those with the matching scores. The best way to keep these results separate, is to create a new group, appending final or some other description, add the racers names, and race.</p>
 
-        </div>
-        <div className="col-sm-6">
-
           <h3 className="text-center" >Results</h3>
 
           <p>The results tab displays all of the results for all dens or groups sorted by "fastest". To print or save the results as a PDF, simply click the print button and the browsers native print dialog will open allowing you to chose your desired format.</p>
+
+        </div>
+        <div className="col-sm-6">
 
           <h3 className="text-center">Feedback</h3>
 
           <p>I hope you enjoyed using PinewoodRaceDay. If you have any suggestions or praises, I would love to hear it. You can reach me on twitter <a href="https://twitter.com/brandonlehr" target="_blank">@brandonlehr</a> and by email <a href="mailto:blehr.mail@gmail.com" target="_blank">blehr.mail@gmail.com</a></p>
 
-        <h2 className="text-center headerFont" style={{'marginTop': '60px'}}>PinewoodRaceDay</h2>
+          <h2 className="text-center headerFont" >PinewoodRaceDay</h2>
+
+          <img className="img-responsive" src={pinewoodImg} />
         </div>
       </div>
     </div>
