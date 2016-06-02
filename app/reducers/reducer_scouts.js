@@ -37,8 +37,9 @@ const ScoutReducer = (state = [], action) => {
   case 'RESET_ALL_STATE':
     const emptyState = [];
     return emptyState;
+  default:
+    return state;
   }
-  return state;
 };
 
 export default ScoutReducer;

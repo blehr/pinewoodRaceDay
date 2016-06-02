@@ -5,8 +5,9 @@ const ActiveDenReducer = (state = '', action) => {
   case 'RESET_ALL_STATE':
     const newState = '';
     return newState;
+  default:
+    return state;
   }
-  return state;
 };
 
 export default ActiveDenReducer;

@@ -53,3 +53,10 @@ export function togglePoints(checked) {
     payload: checked
   };
 }
+
+export function selectNumberOfLanes(num) {
+  return {
+    type: 'NUMBER_OF_LANES',
+    payload: num
+  };
+}
