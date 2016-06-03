@@ -8,7 +8,7 @@ const RaceForm = props => {
     <tr>
       <td><Checkbox scout={props.scout} onCheckedChange={props.onCheckedChange} /></td>
       <td className="text-capitalize"><strong>{props.scout.name}</strong></td>
-      <td><HeatInputs handleSubmit={props.handleSubmit} scout={props.scout} /></td>
+      <td><HeatInputs handleSubmit={props.handleSubmit} scout={props.scout} numberOfLanes={props.numberOfLanes} /></td>
     </tr>
   );
 };
@@ -16,7 +16,8 @@ const RaceForm = props => {
 RaceForm.propTypes = {
   scout: PropTypes.object,
   handleSubmit: PropTypes.func,
-  onCheckedChange: PropTypes.func
+  onCheckedChange: PropTypes.func,
+  numberOfLanes: PropTypes.number
 };
 
 export default RaceForm;

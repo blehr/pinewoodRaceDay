@@ -17,7 +17,7 @@ const HeatInput = props => {
 };
 
 HeatInput.propTypes = {
-  heatNum: PropTypes.string,
+  heatNum: PropTypes.number,
   scout: PropTypes.object,
   handleChange: PropTypes.func
 };

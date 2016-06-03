@@ -12,7 +12,8 @@ class RaceFormContainer extends Component {
     updateScout: PropTypes.func,
     scouts: PropTypes.array,
     activeDen: PropTypes.string,
-    points: PropTypes.bool
+    points: PropTypes.bool,
+    numberOfLanes: PropTypes.number
   }
   constructor(props) {
     super(props);
@@ -22,7 +23,14 @@ class RaceFormContainer extends Component {
 
   handleSubmit(scout, e) {
     e.preventDefault();
-    const heatArray = [Number(scout.heat1), Number(scout.heat2), Number(scout.heat3), Number(scout.heat4)];
+    const heatArray = [];
+
+    let count = 1;
+    while(count <= this.props.numberOfLanes) {
+      heatArray.push(Number(scout[`heat${count}`]));
+      count++;
+    }
+    // replace empty strings with zeros
     const checkedHeatArray = heatArray.map(num => isNaN(num) ? 0 : num);
     const average = _.mean(checkedHeatArray);
     scout.average = Number(average).toFixed(3);
@@ -50,7 +58,17 @@ class RaceFormContainer extends Component {
       }
       if (scout.den) {
         if (scout.den === this.props.activeDen && scout.checked === false) {
-          return <RaceForm scout={scout} key={scout.name} handleSubmit={this.handleSubmit} activeDen={this.props.activeDen} state={this.state} onCheckedChange={this.onCheckedChange} />;
+          return (
+            <RaceForm
+              scout={scout}
+              key={scout.name}
+              handleSubmit={this.handleSubmit}
+              activeDen={this.props.activeDen}
+              state={this.state}
+              numberOfLanes={this.props.numberOfLanes}
+              onCheckedChange={this.onCheckedChange}
+            />
+        );
         }
       }
     });
@@ -68,8 +86,8 @@ class RaceFormContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ activeDen, scouts, points }) => {
-  return { activeDen, scouts, points };
+const mapStateToProps = ({ activeDen, scouts, points, numberOfLanes }) => {
+  return { activeDen, scouts, points, numberOfLanes };
 };
 
 const mapDispatchToProps = dispatch => {

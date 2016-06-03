@@ -5,7 +5,8 @@ import HeatInput from './heat_input.js';
 export default class HeatInputs extends Component {
   static propTypes = {
     handleSubmit: PropTypes.func,
-    scout: PropTypes.object
+    scout: PropTypes.object,
+    numberOfLanes: PropTypes.number
   }
   constructor(props) {
     super(props);
@@ -22,12 +23,16 @@ export default class HeatInputs extends Component {
 
 
   render() {
+    const inputsArr = [];
+    const inputs = () => {
+      for (let i = 1; i <= this.props.numberOfLanes; i++) {
+        inputsArr.push(<HeatInput heatNum={i} handleChange={this.handleChange} scout={this.props.scout} key={i} />);
+      }
+      return inputsArr;
+    };
     return (
       <form className="flexContainer" onSubmit={this.props.handleSubmit.bind(this, this.props.scout)}>
-        <HeatInput heatNum="1" handleChange={this.handleChange} scout={this.props.scout}/>
-        <HeatInput heatNum="2" handleChange={this.handleChange} scout={this.props.scout}/>
-        <HeatInput heatNum="3" handleChange={this.handleChange} scout={this.props.scout}/>
-        <HeatInput heatNum="4" handleChange={this.handleChange} scout={this.props.scout}/>
+        {inputs()}
         <button type="submit" className="btn btn-default heatInputSubmit">Submit</button>
       </form>
     );

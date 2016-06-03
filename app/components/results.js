@@ -14,6 +14,12 @@ const Results = props => {
   }
 
   const Scouts = sortedList.map(scout => {
+    let count = 1;
+    const heatArr = [];
+    while(count <= props.numberOfLanes) {
+      heatArr.push(<td className="text-center" key={count}>{scout[`heat${count}`]}</td>);
+      count++;
+    }
     if (props.list.length !== 0) {
       return (
         <tr key={scout.name}>
@@ -21,16 +27,20 @@ const Results = props => {
             <Checkbox scout={scout} onCheckedChange={props.onCheckedChange} />
           </td>
           <td className="text-capitalize"><strong>{scout.name}</strong></td>
-        <td className="text-center">{scout.heat1}</td>
-          <td className="text-center">{scout.heat2}</td>
-          <td className="text-center">{scout.heat3}</td>
-          <td className="text-center">{scout.heat4}</td>
+          {heatArr}
           <td className="text-center">{scout.average}</td>
           <td className="text-center">{scout.fastest || scout.score}</td>
         </tr>
       );
     }
   });
+
+  const heatLabels = [];
+  let num = 1;
+  while(num <= props.numberOfLanes) {
+    heatLabels.push(<th className="text-center" key={num}>{`Heat ${num}`}</th>);
+    num++;
+  }
 
 
   return (
@@ -41,10 +51,7 @@ const Results = props => {
           <tr>
             <th className={props.onCheckedChange ? '' : 'hide'}>Display</th>
             <th>Name</th>
-            <th className="text-center">Heat 1</th>
-            <th className="text-center">Heat 2</th>
-            <th className="text-center">Heat 3</th>
-            <th className="text-center">Heat 4</th>
+            {heatLabels}
             <th className="text-center">Average</th>
             <th className="text-center">Fastest</th>
           </tr>
@@ -61,7 +68,8 @@ Results.propTypes = {
   list: PropTypes.array,
   den: PropTypes.string,
   onCheckedChange: PropTypes.func,
-  points: PropTypes.bool
+  points: PropTypes.bool,
+  numberOfLanes: PropTypes.number
 };
 
 export default Results;

@@ -10,7 +10,8 @@ class RaceResultsContainer extends Component {
     activeDen: PropTypes.string,
     dens: PropTypes.array,
     updateScout: PropTypes.func,
-    points: PropTypes.bool
+    points: PropTypes.bool,
+    numberOfLanes: PropTypes.number
   }
   constructor(props) {
     super(props);
@@ -28,14 +29,15 @@ class RaceResultsContainer extends Component {
         den={this.props.activeDen}
         dens={this.props.dens}
         points={this.props.points}
+        numberOfLanes={this.props.numberOfLanes}
         onCheckedChange={this.onCheckedChange}
        />
     );
   }
 }
 
-const mapStateToProps = ({ dens, activeDen, scouts, points }) => {
-  return { dens, activeDen, scouts, points };
+const mapStateToProps = ({ dens, activeDen, scouts, points, numberOfLanes }) => {
+  return { dens, activeDen, scouts, points, numberOfLanes };
 };
 
 const mapDispatchToProps = dispatch => {
