@@ -22,7 +22,7 @@ const Welcome = () => {
 
           <h3 className="text-center">The Race</h3>
 
-          <p>The first thing that must be decided is the appropriate scoring method. The most accurate method is the elapsed-time method, if a track with a precision timing system is available. This method is enabled by default.</p>
+          <p>The first thing that must be decided is the appropriate <strong>scoring method</strong> and the <strong>number of lanes</strong>. The most accurate method is the elapsed-time method, if a track with a precision timing system is available. This method is enabled by default.</p>
 
           <p>If a suitable track is not available, or this is a raingutter regatta race, then the points system should be used. To enable this, click the preferences tab above and check the points box. This will allow simple numbers to be entered for each heat with scoring as follows:</p>
 
@@ -55,7 +55,9 @@ const Welcome = () => {
 
           <p>Using this method, the heats will be totaled and the "fastest" racer will be the one with the lowest score.</p>
 
-          <p className="text-danger">It is important to note that switching to or from a points system will delete any scores that have been previously awarded.</p>
+          <p>The number of lanes can be set as two, four, or six. Four lanes is enabled by default, but can be adjusted to accommodate your individual track size or number of raingutter regatta lanes.</p>
+
+          <p className="text-danger">It is important to note that switching to or from a points system, or between the number of lanes, will delete any scores that have been previously awarded.</p>
 
         </div>
         <div className="col-sm-6">

@@ -7,7 +7,8 @@ export default class Tab extends Component {
   static propTypes = {
     index: PropTypes.bool,
     to: PropTypes.string,
-    onlyActiveOnIndex: PropTypes.bool
+    onlyActiveOnIndex: PropTypes.bool,
+    children: PropTypes.node
   }
 
   static contextTypes = {

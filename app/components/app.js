@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Header from './header';
 import Footer from './footer';
 import '../style/style.css';
 
 
-export default (props) => {
+const App = (props) => {
   return (
     <div className="container">
       <Header />
@@ -13,3 +13,9 @@ export default (props) => {
     </div>
   );
 };
+
+App.propTypes = {
+  children: PropTypes.node
+};
+
+export default App;
