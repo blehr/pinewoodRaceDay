@@ -6,11 +6,12 @@ export default class HeatInputs extends Component {
   static propTypes = {
     handleSubmit: PropTypes.func,
     scout: PropTypes.object,
-    numberOfLanes: PropTypes.number
+    numberOfLanes: PropTypes.number,
+    onMadeDirty: PropTypes.func,
+    onMadeSubmitted: PropTypes.func
   }
   constructor(props) {
     super(props);
-
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,7 +19,7 @@ export default class HeatInputs extends Component {
   handleChange(name, heatNum, e) {
     const heat = `heat${heatNum}`;
     name[heat] = e.target.value;
-    this.setState(name);
+    this.props.onMadeDirty();
   }
 
 
@@ -30,10 +31,11 @@ export default class HeatInputs extends Component {
       }
       return inputsArr;
     };
+
     return (
       <form className="flexContainer" onSubmit={this.props.handleSubmit.bind(this, this.props.scout)}>
         {inputs()}
-        <button type="submit" className="btn btn-default heatInputSubmit">Submit</button>
+        <button type="submit" className="btn btn-default heatInputSubmit" onClick={() => {this.props.onMadeSubmitted();}} >Submit</button>
       </form>
     );
   }

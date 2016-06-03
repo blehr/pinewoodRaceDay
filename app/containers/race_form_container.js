@@ -35,7 +35,7 @@ class RaceFormContainer extends Component {
     const average = _.mean(checkedHeatArray);
     scout.average = Number(average).toFixed(3);
     if (this.props.points === false) {
-      const fastest = _.max(checkedHeatArray);
+      const fastest = _.min(checkedHeatArray);
       scout.fastest = Number(fastest).toFixed(3);
       this.props.updateScout(scout);
     }
@@ -76,7 +76,7 @@ class RaceFormContainer extends Component {
     return (
       <div className="table-responsive">
         <h3 className="text-center text-capitalize headerFont">{this.props.activeDen}</h3>
-          <table className="table table-hover">
+          <table className="table">
             <ReactCSSTransitionGroup component="tbody" transitionName="fade" transitionEnterTimeout={500} transitionLeaveTimeout={300} >
               {Scout}
             </ReactCSSTransitionGroup >
