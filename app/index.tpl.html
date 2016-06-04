@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" >
+<html lang="en" manifest="manifest.appcache" >
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -48,5 +48,23 @@
   </head>
   <body>
     <div class="root"></div>
+    <script type="text/javascript">
+      // Check if a new cache is available on page load.
+      window.addEventListener('load', function(e) {
+
+        window.applicationCache.addEventListener('updateready', function(e) {
+          if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+            // Browser downloaded a new app cache.
+            if (confirm('A new version of this site is available. Load it?')) {
+              window.location.reload();
+            }
+          } else {
+            // Manifest didn't changed.
+            return;
+          }
+        }, false);
+
+      }, false);
+    </script>
   </body>
 </html>
