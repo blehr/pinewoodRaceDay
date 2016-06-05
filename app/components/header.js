@@ -10,18 +10,21 @@ const style = {
 
 const Header = () => {
   return (
-    <div className="row text-center" >
-      <header>
-        <div className="col-sm-6">
-          <h1 className="headerFont">PinewoodRaceDay.com</h1>
+    <header>
+      <div className="row text-center" >
+          <div className="col-sm-6">
+            <h1 className="headerFont">PinewoodRaceDay.com</h1>
+          </div>
+          <div className="col-sm-6">
+            <GoogleAd client="ca-pub-9453781066915703" slot="8993316607" format="auto" wrapperDivStyle={style} />
+          </div>
+      </div>
+      <div className="row">
+        <div className="col-sm-12">
+          <NavBar />
         </div>
-        <div className="col-sm-6">
-          <GoogleAd client="ca-pub-9453781066915703" slot="8993316607" format="auto" wrapperDivStyle={style} />
-        </div>
-        <NavBar />
-      </header>
-
-    </div>
+      </div>
+    </header>
   );
 };
 
