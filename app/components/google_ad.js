@@ -17,7 +17,7 @@ export default class GoogleAd extends Component {
 
   render() {
     return (
-      <div style={this.props.wrapperDivStyle}>
+      <div style={this.props.wrapperDivStyle} className="hidden-print">
         <ins className="adsbygoogle"
            style={{'display': 'block'}}
            data-ad-client={this.props.client}
