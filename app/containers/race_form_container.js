@@ -68,7 +68,7 @@ class RaceFormContainer extends Component {
               numberOfLanes={this.props.numberOfLanes}
               onCheckedChange={this.onCheckedChange}
             />
-        );
+          );
         }
       }
     });

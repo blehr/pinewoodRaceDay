@@ -13,7 +13,7 @@ const ScoutReducer = (state = [], action) => {
   case 'UPDATE_SCOUT':
     newState = [];
     state.forEach(scout => {
-      if(scout.name === action.payload.name) {
+      if(scout.name === action.payload.name && scout.den === action.payload.den) {
         newState.push(action.payload);
       } else {
         newState.push(scout);
