@@ -31,8 +31,6 @@ class RosterScoutContainer extends Component {
     e.preventDefault();
     if (this.state.scoutName === '' || !this.props.activeDen) {
       showErrorMessage(this.errorId);
-
-      return true;
     } else {
       this.props.addScoutName(this.state.scoutName, this.props.activeDen);
       this.setState({ scoutName: '' });

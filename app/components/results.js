@@ -6,7 +6,7 @@ const Results = props => {
   props.list.map(scout => {if (scout.den === props.den) sortedList.push(scout);} );
   // sorted fastest to slowest
   if (props.points === false) {
-    sortedList.sort((a, b) => b.fastest - a.fastest);
+    sortedList.sort((a, b) => a.fastest - b.fastest);
   }
   // sorted lowest to highest from points
   if (props.points === true) {

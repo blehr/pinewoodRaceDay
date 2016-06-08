@@ -2,16 +2,33 @@ import React, { PropTypes } from 'react';
 
 
 const Checkbox = props => {
+  const label = () => {
+    if (props.isReselecting) {
+      return 'add';
+    }
+    if (!props.isReselecting) {
+      return props.scout.checked ? 'show' : 'hide';
+    }
+  };
+  const isChecked = () => {
+    if (props.isReselecting && props.containerState.newDenScouts.indexOf(props.scout.name) !== -1) {
+      return true;
+    }
+    if (!props.isReselecting && props.scout.checked ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <div className="checkbox">
       <label>
         <input
           type="checkbox"
-          checked={props.scout.checked || false}
+          checked={isChecked()}
           onChange={() => {props.onCheckedChange(props.scout);}}
-          scout={props.scout}
         />
-      { props.scout.checked ? 'show' : 'hide'}
+      { label() }
       </label>
     </div>
   );
@@ -20,7 +37,9 @@ const Checkbox = props => {
 Checkbox.propTypes = {
   scout: PropTypes.object,
   updateScout: PropTypes.func,
-  onCheckedChange: PropTypes.func
+  onCheckedChange: PropTypes.func,
+  containerState: PropTypes.object,
+  isReselecting: PropTypes.bool
 };
 
 export default Checkbox;

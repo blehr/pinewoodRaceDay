@@ -24,14 +24,18 @@ class RaceResultsContainer extends Component {
 
   render() {
     return (
-      <Results
-        list={this.props.scouts}
-        den={this.props.activeDen}
-        dens={this.props.dens}
-        points={this.props.points}
-        numberOfLanes={this.props.numberOfLanes}
-        onCheckedChange={this.onCheckedChange}
-       />
+      <div className="row">
+        <div className="col-sm-12">
+          <Results
+            list={this.props.scouts}
+            den={this.props.activeDen}
+            dens={this.props.dens}
+            points={this.props.points}
+            numberOfLanes={this.props.numberOfLanes}
+            onCheckedChange={this.onCheckedChange}
+           />
+        </div>
+      </div>
     );
   }
 }

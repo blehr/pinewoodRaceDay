@@ -1,6 +1,15 @@
 .denList {
   margin-top: 10px;
 }
+.reselect-den {
+  max-height: 75px;
+  overflow: hidden;
+  transition: all 300ms ease-in;
+}
+
+.closed {
+  max-height: 0;
+}
 
 
 .list-item-spacing {

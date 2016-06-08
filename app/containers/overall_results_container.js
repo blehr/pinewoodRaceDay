@@ -11,7 +11,8 @@ class OverallResultsContainer extends Component {
     dens: PropTypes.array,
     updateScout: PropTypes.func,
     onPDFClick: PropTypes.func,
-    numberOfLanes: PropTypes.number
+    numberOfLanes: PropTypes.number,
+    points: PropTypes.bool
   }
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ class OverallResultsContainer extends Component {
   }
   render() {
     const denResultTable = this.props.dens.map(den => {
-      return <Results list={this.props.scouts} activeDen={den} den={den} key={den} numberOfLanes={this.props.numberOfLanes} />;
+      return <Results list={this.props.scouts} activeDen={den} den={den} key={den} numberOfLanes={this.props.numberOfLanes} points={this.props.points} />;
     });
     return (
       <div>
@@ -36,8 +37,8 @@ class OverallResultsContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ dens, activeDen, scouts, numberOfLanes }) => {
-  return { dens, activeDen, scouts, numberOfLanes };
+const mapStateToProps = ({ dens, activeDen, scouts, numberOfLanes, points }) => {
+  return { dens, activeDen, scouts, numberOfLanes, points };
 };
 
 const mapDispatchToProps = dispatch => {

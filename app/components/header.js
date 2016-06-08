@@ -16,7 +16,7 @@ const Header = () => {
             <h1 className="headerFont">PinewoodRaceDay.com</h1>
           </div>
           <div className="col-sm-6">
-            <GoogleAd client="ca-pub-9453781066915703" slot="8993316607" format="auto" wrapperDivStyle={style} />
+            {/*<GoogleAd client="ca-pub-9453781066915703" slot="8993316607" format="auto" wrapperDivStyle={style} />*/}
           </div>
       </div>
       <div className="row">

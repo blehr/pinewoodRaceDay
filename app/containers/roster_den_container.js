@@ -32,9 +32,7 @@ class RosterDenContainer extends Component {
 
   onDenSubmit(e) {
     e.preventDefault();
-    if (this.state.denName === '') {
-      return true;
-    } else {
+    if (this.state.denName !== '') {
       this.props.addDenName(this.state.denName);
       this.setState({ denName: '' });
     }
@@ -49,7 +47,7 @@ class RosterDenContainer extends Component {
   onDeleteClick(den) {
     /*
     *  if any scouts are assigned to den show error message
-    * if den is active den, treset active den
+    *  if den is active den, treset active den
     */
     const scoutArray = this.props.scouts;
     if (!scoutArray.some(scout => scout.den === den)) {

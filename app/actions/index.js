@@ -60,3 +60,10 @@ export function selectNumberOfLanes(num) {
     payload: num
   };
 }
+
+export function toggleIsSelecting(value) {
+  return {
+    type: 'TOGGLE_ISSELECTING',
+    payload: value
+  };
+}

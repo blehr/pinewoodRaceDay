@@ -8,7 +8,10 @@ export default class RaceForm extends Component {
     scout: PropTypes.object,
     handleSubmit: PropTypes.func,
     onCheckedChange: PropTypes.func,
-    numberOfLanes: PropTypes.number
+    numberOfLanes: PropTypes.number,
+    isReselecting: PropTypes.bool,
+    onReselect: PropTypes.func,
+    state: PropTypes.object
   }
 
   constructor(props) {
@@ -40,7 +43,8 @@ export default class RaceForm extends Component {
     };
     return (
       <tr className={getClassName()}>
-        <td><Checkbox scout={this.props.scout} onCheckedChange={this.props.onCheckedChange} /></td>
+        <td style={this.props.isReselecting ? {display: 'none'} : { display: 'table-cell'}}><Checkbox scout={this.props.scout} onCheckedChange={this.props.onCheckedChange} containerState={this.props.state} isReselecting={this.props.isReselecting} /></td>
+        <td style={this.props.isReselecting ? {display: 'table-cell'} : { display: 'none'}}><Checkbox scout={this.props.scout} onCheckedChange={this.props.onReselect} containerState={this.props.state} isReselecting={this.props.isReselecting}/></td>
         <td className="text-capitalize"><strong>{this.props.scout.name}</strong></td>
         <td>
           <HeatInputs
