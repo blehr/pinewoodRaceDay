@@ -70,7 +70,7 @@ const Welcome = () => {
             <caption>Typical lane rotation for a six car race.</caption>
             <thead>
               <tr>
-                <th className="text-center">Heat #</th>
+                <th className="text-center">Car #</th>
                 <th className="text-center">Lane 4</th>
                 <th className="text-center">Lane 3</th>
                 <th className="text-center">Lane 2</th>
@@ -80,45 +80,45 @@ const Welcome = () => {
             <tbody>
               <tr>
                 <td><b>1</b></td>
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
+                <td className="bg-warning">1</td>
+                <td className="bg-danger">1</td>
+                <td className="bg-muted">1</td>
+                <td >1</td>
               </tr>
               <tr>
                 <td><b>2</b></td>
-                <td>5</td>
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
+                <td className="bg-danger">2</td>
+                <td className="bg-muted">2</td>
+                <td >2</td>
+                <td className="bg-success">2</td>
               </tr>
               <tr>
                 <td><b>3</b></td>
-                <td>6</td>
-                <td>5</td>
-                <td>4</td>
-                <td>3</td>
+                <td className="bg-muted">3</td>
+                <td >3</td>
+                <td className="bg-success">3</td>
+                <td className="bg-info">3</td>
               </tr>
               <tr>
                 <td><b>4</b></td>
-                <td>1</td>
-                <td>6</td>
-                <td>5</td>
-                <td>4</td>
+                <td >4</td>
+                <td className="bg-success">4</td>
+                <td className="bg-info">4</td>
+                <td className="bg-warning">4</td>
               </tr>
               <tr>
                 <td><b>5</b></td>
-                <td>2</td>
-                <td>1</td>
-                <td>6</td>
-                <td>5</td>
+                <td className="bg-success">5</td>
+                <td className="bg-info">5</td>
+                <td className="bg-warning">5</td>
+                <td className="bg-danger">5</td>
               </tr>
               <tr>
                 <td><b>6</b></td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>6</td>
+                <td className="bg-info">6</td>
+                <td className="bg-warning">6</td>
+                <td className="bg-danger">6</td>
+                <td className="bg-muted">6</td>
               </tr>
             </tbody>
           </table>

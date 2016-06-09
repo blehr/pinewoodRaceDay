@@ -11,6 +11,9 @@
   max-height: 0;
 }
 
+.bg-muted {
+  background-color: #F5F5F5;
+}
 
 .list-item-spacing {
   margin-top: 2px;
