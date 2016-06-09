@@ -14,11 +14,11 @@ const Results = props => {
   }
 
   const Scouts = sortedList.map(scout => {
-    let count = 1;
+    let count = props.numberOfLanes;
     const heatArr = [];
-    while(count <= props.numberOfLanes) {
+    while(count > 0) {
       heatArr.push(<td className="text-center" key={count}>{scout[`heat${count}`]}</td>);
-      count++;
+      count--;
     }
     if (props.list.length !== 0) {
       return (
@@ -36,10 +36,10 @@ const Results = props => {
   });
 
   const heatLabels = [];
-  let num = 1;
-  while(num <= props.numberOfLanes) {
-    heatLabels.push(<th className="text-center" key={num}>{`Heat ${num}`}</th>);
-    num++;
+  let num = props.numberOfLanes;
+  while(num > 0) {
+    heatLabels.push(<th className="text-center" key={num}>{`Lane ${num}`}</th>);
+    num--;
   }
 
 

@@ -26,7 +26,7 @@ export default class HeatInputs extends Component {
   render() {
     const inputsArr = [];
     const inputs = () => {
-      for (let i = 1; i <= this.props.numberOfLanes; i++) {
+      for (let i = this.props.numberOfLanes; i > 0; i--) {
         inputsArr.push(<HeatInput heatNum={i} handleChange={this.handleChange} scout={this.props.scout} key={i} />);
       }
       return inputsArr;

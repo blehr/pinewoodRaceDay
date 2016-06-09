@@ -39,10 +39,10 @@ class RaceFormDenSelectContainer extends Component {
     e.preventDefault();
     const heatArray = [];
 
-    let count = 1;
-    while(count <= this.props.numberOfLanes) {
+    let count = this.props.numberOfLanes;
+    while(count > 0) {
       heatArray.push(Number(scout[`heat${count}`]));
-      count++;
+      count--;
     }
     // replace empty strings with zeros
     const checkedHeatArray = heatArray.map(num => isNaN(num) ? 0 : num);

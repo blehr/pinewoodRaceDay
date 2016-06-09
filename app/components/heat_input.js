@@ -4,7 +4,7 @@ import React, { PropTypes } from 'react';
 const HeatInput = props => {
   return (
       <div className="form-group flexItem">
-        <label htmlFor={`heat${props.heatNum}`}>{`Heat ${props.heatNum}`}</label>
+        <label htmlFor={`heat${props.heatNum}`}>{`Lane ${props.heatNum}`}</label>
         <input
           type="text"
           className="form-control heatInput"
