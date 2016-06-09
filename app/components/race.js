@@ -4,7 +4,7 @@ import RaceFormDenSelectContainer from '../containers/race_form_den_select_conta
 
 export default () => {
   return (
-    <div >
+    <div className="pageContentHeight" >
       <RaceFormDenSelectContainer />
       <RaceResultsContainer />
     </div>
