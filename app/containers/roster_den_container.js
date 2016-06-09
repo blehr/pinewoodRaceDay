@@ -33,7 +33,7 @@ class RosterDenContainer extends Component {
   onDenSubmit(e) {
     e.preventDefault();
     if (this.state.denName !== '') {
-      this.props.addDenName(this.state.denName);
+      this.props.addDenName(this.state.denName.toLowerCase());
       this.setState({ denName: '' });
     }
   }

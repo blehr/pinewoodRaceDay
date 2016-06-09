@@ -92,12 +92,13 @@ class RaceFormDenSelectContainer extends Component {
     e.preventDefault();
     if (this.state.newDen !== '') {
       if (this.props.dens.indexOf(this.state.newDen) === -1 && this.state.newDenScouts.length !== 0) {
-        this.props.addDenName(this.state.newDen);
+        const newDenName = this.state.newDen.toLowerCase();
+        this.props.addDenName(newDenName);
         this.state.newDenScouts.map( scout => {
-          this.props.addScoutName(scout, this.state.newDen);
+          this.props.addScoutName(scout, newDenName);
         });
         this.props.toggleIsSelecting(false);
-        this.props.selectActiveDen(this.state.newDen);
+        this.props.selectActiveDen(newDenName);
 
         this.setState({
           newDen: '',

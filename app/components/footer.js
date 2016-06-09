@@ -11,7 +11,7 @@ const Footer = () => {
     <footer>
       <div className="row">
         <div className="col-sm-12">
-          {/*<GoogleAd slot="7398832204" client="ca-pub-9453781066915703" format="auto" wrapperDivStyle={style} />*/}
+          <GoogleAd slot="7398832204" client="ca-pub-9453781066915703" format="auto" wrapperDivStyle={style} />
         </div>
       </div>
       <div className="row" >
