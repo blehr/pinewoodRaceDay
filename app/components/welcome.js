@@ -61,12 +61,13 @@ const Welcome = () => {
 
         </div>
         <div className="col-sm-6">
+
           <h3 className="text-center">Lane Rotation</h3>
 
           <p>As nice as our track is, we still like to give each racer an opportunity to compete in each lane. This stops complaints of one lane being "faster" than another. Below is a graphic and a table demonstrating this approach. Racers progress in a line from one end of the track to the other with the first three racers going to the back of the line till the first racer finishes in lane two.</p>
 
           <div><img className="img-responsive" src={img} /></div>
-          <table className="table table-bordered table-hover text-center">
+          <table className="table table-bordered text-center">
             <caption>Typical lane rotation for a six car race.</caption>
             <thead>
               <tr>
@@ -125,6 +126,7 @@ const Welcome = () => {
         </div>
       </div>
       <hr/>
+
       <div className="row">
         <div className="col-sm-6">
           <h3 className="text-center">Entering Scores</h3>
@@ -149,6 +151,15 @@ const Welcome = () => {
           <h2 className="text-center headerFont" >PinewoodRaceDay</h2>
 
           <img className="img-responsive" src={pinewoodImg} />
+        </div>
+      </div>
+      <hr/>
+
+      <div className="row">
+        <div className="col-sm-8 col-sm-offset-2">
+          <div className="embed-responsive embed-responsive-16by9 tut-video">
+            <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/_iMCHjuNVIw?rel=0" allowFullScreen></iframe>
+          </div>
         </div>
       </div>
     </div>
