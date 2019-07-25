@@ -36,7 +36,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'app/favicon', to: 'favicon' },
-      { from: 'app/manifest.appcache' }
+      { from: 'app/manifest.appcache' },
+      { from: 'app/ads.txt' },
     ]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
